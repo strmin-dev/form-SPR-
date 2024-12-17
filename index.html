@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <title>JAVA FORM</title>
+            <meta charset="UTF-8">
+            <meta  name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="style.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        </head>
+
+        <body>
+            <h1>CONTACT US</h1>
+            <p>For your inquiries</p>
+            
+            <div class="contact-box">
+                <div class="contactleft">
+                    <h3>Send your inquiries</h3>
+                    <form id="inquiries">
+                        <div class="inputrow">
+                            <div class="inputgroup">
+                                <label>Name</label>
+                                <input type="text" id="name" name="name" placeholder="Juan Dela Cruz" required>
+                            </div>
+                            <div class="inputgroup">
+                                <label>Email</label>
+                                <input type="email" id="email" name="email" placeholder="juandelacruz@gmail.com" required>
+                            </div>
+                            <div class="inputgroup">
+                                <label>Phone Number</label>
+                                <input type="text" id="number" name="number" placeholder="+63" required>
+                            </div>
+                            <div class="inputgroup">
+                                <label>Subject</label>
+                                <input type="text" id="subject" name="subject" placeholder="Name of Inquiry" required>
+                            </div>
+                        </div>
+            
+                        <label>Message</label>
+                        <textarea rows="5" id="msg" name="msg" placeholder="Type here" required></textarea>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            
+                <div class="contactright">
+                    <h3>Reach Us</h3>
+                    <table>
+                        <tr>
+                            <td>Email</td>
+                            <td>shielaatienza9@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>Facebook</td>
+                            <td>Shiela Atienza</td>
+                        </tr>
+                        <tr>
+                            <td>Instagram</td>
+                            <td>@shixluh</td>
+                        </tr>
+                        <tr>
+                            <td>Phone</td>
+                            <td>+63 9569645268</td>
+                        </tr>
+                    </table>
+            
+                    <div class="icons">
+                        <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcRzBxxrtpVTsNVhXklNLskmfpWQQnXnxXZPrpBphXrdvQdWLNsrQWDKWhRNdbgpxJmWfrDWN"><i class="fa-brands fa-google"></i></a>
+                        <a href="https://www.facebook.com/shielamae.atienza27"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/shixluh/profilecard/?igsh=bnlvYzM1bXdzcHJ6"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="result" class="result" style="display: none;">
+                <h3>Form Submitted Successfully!</h3>
+                <p><strong>Name:</strong> <span id="resultName"></span></p>
+                <p><strong>Email:</strong> <span id="resultEmail"></span></p>
+                <p><strong>Phone:</strong> <span id="resultPhone"></span></p>
+                <p><strong>Subject:</strong> <span id="resultSubject"></span></p>
+                <p><strong>Message:</strong> <span id="resultMessage"></span></p>
+            </div>
+            
+            <script>
+                document.getElementById('inquiries').addEventListener('submit', function(event) {
+                    event.preventDefault();
+            
+                    var name = document.getElementById('name').value;
+                    var email = document.getElementById('email').value;
+                    var number = document.getElementById('number').value;
+                    var subject = document.getElementById('subject').value;
+                    var message = document.getElementById('msg').value;
+            
+                    document.getElementById('resultName').innerText = name;
+                    document.getElementById('resultEmail').innerText = email;
+                    document.getElementById('resultPhone').innerText = number;
+                    document.getElementById('resultSubject').innerText = subject;
+                    document.getElementById('resultMessage').innerText = message;
+            
+                    document.getElementById('result').style.display = 'block';
+                });
+            </script>
+         
+            <footer>
+                <p> &copy; 2024 Shiela Mae Atienza DCPET 1-2 </p>
+            </footer>
+        </body>
+    </html>
